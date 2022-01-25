@@ -44,14 +44,14 @@ Yudhistira
             <tbody>
                 <form class="forms-sample" action="/nilai/save" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                @foreach ($krs as $data)
+                @foreach ($join as $data)
             <tr>
               <td width="20px"><?= $no++; ?></td>
-              <td>{{$data->kode_matakuliah}}</td>
               <td>{{$data->id_krs}}</td>
-              <td>belum join</td>
+              <td>{{$data->kode_matakuliah}}</td>
+              <td>{{$data->nama_matakuliah}}</td>
               <td>{{$data->nim}}</td>
-              <td>belum join</td>
+              <td>{{$data->nama_lengkap}}</td>
               <input type="hidden" name="id_krs[]" value="{{$data->id_krs}}">
               <input type="hidden" name="kode_mks" value="{{$data->kode_matakuliah}}">
               <td><input type="text" class="form-control" name="isinilai[]" value="{{$data->nilai}}"></td>

@@ -28,4 +28,13 @@ class KhsController extends Controller
         return view('khs-list', $data);
     }
 
+    public function generatePDF($id,$thn)
+    {
+        $dataMhswa = DB::table('mahasiswa') -> where('nim', $id) -> get();
+        $data = ['join' =>$this->KrsModel->allData($id,$thn), 'mhs' => $dataMhswa];
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadview('mypdfkhs', $data);
+        return $pdf->stream('KHS.pdf');
+    }
+
 }

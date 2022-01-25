@@ -34,9 +34,9 @@ class NilaiController extends Controller
     }
 
     public function inputnilai($kode_matakuliah,$id_thn_akad){
-        $data = ['join' =>$this->NilaiModel->allData($kode_matakuliah,$id_thn_akad)];
         $dataKrs = DB::table('krs') -> where('kode_matakuliah', $kode_matakuliah) -> where('id_thn_akad', $id_thn_akad) -> get();
-        return view('nilai-list', ['data' => $data, 'krs' => $dataKrs]);
+        $data = ['join' =>$this->NilaiModel->allData($kode_matakuliah,$id_thn_akad),'mhs' => $dataKrs];
+        return view('nilai-list', $data);
     }
 
     public function simpan(Request $a)

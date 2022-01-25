@@ -1,55 +1,50 @@
-@extends('template')
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KHS</title>
+	<style type="text/css">
+		body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff;
+        }
+        .rangkasurat{
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+        }
+        table{
+            border-bottom: 3px solid #000;
+            padding: 0px;
+        }
+        .tengah{
+            line-height: 3px;
+        }
+        p{
+            font-family: 'Courier New', Courier, monospace;
+        }
+	</style>
+</head>
+<body>
+    <div class="rangkasurat">
+        <table width="100%">
+            <tr>
+                <td><img src="theme/images/logo-mini.png" width="130px"></td>
+                <td class="tengah">
+                    YAYASAN PENDIDIKAN INDORAMA<br>
+                    <h2>POLITEKNIK ENJINERING INDORAMA</h2>
+                    <h4>Kembangkuning, Jatiluhur</h4>
+                    <h3>PURWAKARTA - 41152</h3>
+                    <font size="9px"><i>Telp. (0264) 8301041 - 43, Fax. (0264) 202318, Website:http://www.pei.ac.id, Email:info@pei.ac.id</i></font>
+                </td>
+            </tr>
+        </table>
+        <p align="center">Kartu Hasil Studi</p><br><br>
+        Nama : {{Auth::guard('mahasiswa')->user()->nama_lengkap}}<br>
+        Nim  : {{Auth::guard('mahasiswa')->user()->nim}}<br>
+        Program Studi : {{Auth::guard('mahasiswa')->user()->nama_prodi}}<br>
+        Semester: 5<br>
 
-@section('judul')
-KHS Mahasiswa
-@endsection
-
-@section('nama')
-Yudhistira
-@endsection
-
-@section('navbar')
-@parent
-
-@endsection
-
-@section('sidebar')
-@parent
-@endsection
-
-
-@section('konten')
-<div class="col-12 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Kartu Hasil Studi Mahasiswa</h4>
-        <div class="home-tab">
-            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-              <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">NIM : {{Auth::guard('mahasiswa')->user()->nim}}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">Nama : {{Auth::guard('mahasiswa')->user()->nama_lengkap}}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-selected="false">Semester : 5</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">Prodi : {{Auth::guard('mahasiswa')->user()->nama_prodi}}</a>
-                </li>
-              </ul>
-              <div>
-                <div class="btn-wrapper">
-                  <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
-                  <a href="/khs/print/{{Auth::guard('mahasiswa')->user()->nim}}/6" class="btn btn-otline-dark"><i class="icon-printer"></i> Print</a>
-                  <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
-                </div>
-              </div>
-            </div>
-        </div><br>
-      <div class="table-responsive">
-          <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered">
             <thead>
               <tr>
                 <th>NO</th>
@@ -121,9 +116,6 @@ Yudhistira
             </tr>
           </tbody>
                 </table>
-        </div>
-      </div>
     </div>
-  </div>
-
-  @endsection
+</body>
+</html>

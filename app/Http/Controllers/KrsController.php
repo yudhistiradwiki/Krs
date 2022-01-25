@@ -70,14 +70,12 @@ class KrsController extends Controller
         return view('krs-view', ['datamk' => $datamk]);
     }
 
-    public function generatePDF()
+    public function generatePDF($id,$thn)
     {
-        $data = [
-            'title' => 'Welcome to ItSolutionStuff.com',
-            'date' => date('m/d/Y')
-        ];
+        $dataMhswa = DB::table('krs') -> where('nim', $id) -> where('id_thn_akad',$thn) -> get();
+        $data = ['join' =>$this->KrsModel->allData($id,$thn), 'mhs' => $dataMhswa];
         $pdf = app('dompdf.wrapper');
         $pdf->loadview('mypdf', $data);
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->stream('KRS.pdf');
     }
 }

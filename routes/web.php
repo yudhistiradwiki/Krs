@@ -98,7 +98,7 @@ Route::get('/krs/view', [KrsController::class, 'datamatkul']);
 Route::get('/krs/insert', [DosenController::class, 'tambah'])-> middleware('auth:user,mahasiswa,dosen');;
 Route::post('/krs/save', [KrsController::class, 'simpan'])-> middleware('auth:user,mahasiswa,dosen');;
 Route::get('/krs/cari', [KrsController::class, 'cari'])-> middleware('auth:user,mahasiswa,dosen');;
-Route::get('/krs/print', [KrsController::class, 'generatePDF']);
+Route::get('/krs/print/{nim}/{id_thn_akad}', [KrsController::class, 'generatePDF']);
 
 
 //nilai
@@ -109,6 +109,7 @@ Route::post('/nilai/save', [NilaiController::class, 'simpan'])-> middleware('aut
 
 //khs
 Route::get('/khs/view/{nim}/{thn}', [KhsController::class, 'coba']);
+Route::get('/khs/print/{nim}/{id_thn_akad}', [KhsController::class, 'generatePDF']);
 
 Route::get('/khs', function () {
     return view('khs-select');
