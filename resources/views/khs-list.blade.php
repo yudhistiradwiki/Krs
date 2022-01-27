@@ -74,16 +74,42 @@ Yudhistira
                 else if($nilai >= 0 && $nilai <= 59) {
                     $skor = 'E';}
                 else $skor = 'Error!';
-              echo $skor;
+              return $skor;
             }
 
-            function Poin($nilai, $sks){
-                if($nilai == 'A') $skor = 4 * $sks;
-                else if($nilai == 'B') $skor = 3 * $sks;
-                else if($nilai == 'C') $skor = 2 * $sks;
-                else if($nilai == 'D') $skor = 1 * $sks;
+            function poinHuruf($nilai){
+                if($nilai <= 4.0 && $nilai >= 3.6){
+                    $skor = 'A';}
+                else if($nilai <= 3.5 && $nilai >= 3.1){
+                     $skor = 'AB';}
+                else if($nilai <= 3.0 && $nilai >= 2.6) {
+                    $skor = 'B';}
+                else if($nilai <= 2.5 && $nilai >= 2.1){
+                    $skor = 'BC';}
+                else if($nilai <= 2.0 && $nilai >= 1.6) {
+                    $skor = 'C';}
+                else if($nilai <= 1.5 && $nilai >= 1.1) {
+                    $skor = 'D';}
+                else if($nilai <= 1.0 && $nilai >= 0) {
+                    $skor = 'E';}
+                else $skor = 'Error!';
+              return $skor;
+            }
+
+            function PoinTes($nilai, $sks){
+                if($nilai == 'A'){
+                    $skor = 4 * $sks;}
+                else if($nilai == 'B'){
+                    $skor = 3 * $sks;}
+                else if($nilai == 'C'){
+                    $skor = 2 * $sks;}
+                else if($nilai == 'D'){
+                     $skor = 1 * $sks;}
                 else $skor = 0;
-              return $skor;}
+              return $skor;
+            }
+
+
 
             $no = 1;
             $jumlahSks = 0;
@@ -98,10 +124,10 @@ Yudhistira
               <td>{{$dataMahasiswa ->nama_matakuliah}}</td>
               <td>{{$dataMahasiswa ->sks}}</td>
               <td>{{$dataMahasiswa ->nilai}}</td>
-              <td><?php Poin('B', $dataMahasiswa -> sks);?></td>
-              <td><?php skorNilai($dataMahasiswa -> nilai);?></td>
+              <td><?php echo PoinTes(skorNilai($dataMahasiswa -> nilai),$dataMahasiswa->sks);?></td>
+              <td><?php echo skorNilai($dataMahasiswa -> nilai);?></td>
               <?php
-            $jumlahPoin = $jumlahPoin + Poin('B', $dataMahasiswa -> sks);
+            $jumlahPoin = $jumlahPoin + PoinTes(skorNilai($dataMahasiswa -> nilai),$dataMahasiswa->sks);
             $jumlahSks += $dataMahasiswa->sks;
             $jumlahNilai += $dataMahasiswa -> nilai;
             ?>
@@ -117,7 +143,7 @@ Yudhistira
             <tr>
                 <td colspan="5"><b>Index Prestasi</b></td>
                 <td><?= $jumlahPoin / $jumlahSks; ?></td>
-                <td>A</td>
+                <td><?php echo poinHuruf($jumlahPoin / $jumlahSks);?></td>
             </tr>
           </tbody>
                 </table>

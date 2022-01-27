@@ -22,6 +22,12 @@ use App\Http\Controllers\KhsController;
 |
 */
 
+//login
+Route::get('/login', [LoginController::class, 'index']) -> name('login') -> middleware('guest');
+Route::post('/login', [LoginController::class, 'auth']);
+Route::get('/logout', [LoginController::class, 'logout']);
+
+
 Route::get('/admin', function () {
     return view('home-admin');
 }) -> middleware('auth:user');
@@ -34,10 +40,7 @@ Route::get('/lecture', function () {
     return view('home-dosen');
 }) -> middleware('auth:user,dosen');
 
-//login
-Route::get('/login', [LoginController::class, 'index']) -> name('login') -> middleware('guest');
-Route::post('/login', [LoginController::class, 'auth']);
-Route::get('/logout', [LoginController::class, 'logout']);
+
 
 
 //mahasiswa

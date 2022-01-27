@@ -73,7 +73,7 @@ class KrsController extends Controller
     public function generatePDF($id,$thn)
     {
         $dataMhswa = DB::table('krs') -> where('nim', $id) -> where('id_thn_akad',$thn) -> get();
-        $data = ['join' =>$this->KrsModel->allData($id,$thn), 'mhs' => $dataMhswa];
+        $data = ['join' =>$this->KrsModel->allData($id,$thn), 'mhs' => $dataMhswa, 'date' => date('d F Y')];
         $pdf = app('dompdf.wrapper');
         $pdf->loadview('mypdf', $data);
         return $pdf->stream('KRS.pdf');

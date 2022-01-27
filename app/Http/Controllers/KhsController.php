@@ -31,7 +31,7 @@ class KhsController extends Controller
     public function generatePDF($id,$thn)
     {
         $dataMhswa = DB::table('mahasiswa') -> where('nim', $id) -> get();
-        $data = ['join' =>$this->KrsModel->allData($id,$thn), 'mhs' => $dataMhswa];
+        $data = ['join' =>$this->KrsModel->allData($id,$thn), 'mhs' => $dataMhswa,'date' => date('d F Y')];
         $pdf = app('dompdf.wrapper');
         $pdf->loadview('mypdfkhs', $data);
         return $pdf->stream('KHS.pdf');

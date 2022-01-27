@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>KRS</title>
+	<title>KRS - {{Auth::guard('mahasiswa')->user()->nama_lengkap}}</title>
 	<style type="text/css">
 		body{
-            font-family: Arial, Helvetica, sans-serif;
+
             background-color: #fff;
         }
-        .rangkasurat{
-            width: 100%;
-            background-color: #fff;
-            padding: 20px;
-        }
-        table{
+        .atas{
             border-bottom: 3px solid #000;
             padding: 0px;
         }
         .tengah{
             line-height: 3px;
+		    font-family: Arial, Helvetica, sans-serif;
         }
         p{
             font-family: 'Courier New', Courier, monospace;
+            color: #000;
+        }
+        th{
+            text-align: left;
         }
 	</style>
 </head>
 <body>
     <div class="rangkasurat">
-        <table width="100%">
+        <table class="atas" width="100%">
             <tr>
                 <td><img src="theme/images/logo-mini.png" width="130px"></td>
                 <td class="tengah">
@@ -38,13 +38,30 @@
                 </td>
             </tr>
         </table>
-        <p align="center">Kartu Rencana Studi</p><br><br>
-        Nama : {{Auth::guard('mahasiswa')->user()->nama_lengkap}}<br>
-        Nim  : {{Auth::guard('mahasiswa')->user()->nim}}<br>
-        Program Studi : {{Auth::guard('mahasiswa')->user()->nama_prodi}}<br>
-        Semester: 5<br>
-
-        <table class="table table-striped table-bordered">
+        <p align="center" style="font-size: 20px"><b>KARTU RENCANA STUDI</b></p>
+        <table style="width: 50%; font-family:'Courier New', Courier, monospace">
+            <tr>
+                <th align="left">Nama</th>
+                <td>:</td>
+                <td>{{Auth::guard('mahasiswa')->user()->nama_lengkap}}</td>
+            </tr>
+            <tr>
+                <th align="left">NIM</th>
+                <td>:</td>
+                <td>{{Auth::guard('mahasiswa')->user()->nim}}</td>
+            </tr>
+            <tr>
+                <th align="left">Program Studi</th>
+                <td>:</td>
+                <td>{{Auth::guard('mahasiswa')->user()->nama_prodi}}</td>
+            </tr>
+            <tr>
+                <th align="left">Semester</th>
+                <td>:</td>
+                <td>5</td>
+            </tr>
+        </table><br>
+        <table align="center" border="1" style="border-radius:1px;width: 100%; font-family:'Courier New', Courier, monospace; border-color:#000">
             <thead>
               <tr>
                 <th>No</th>
@@ -76,6 +93,8 @@
                 </tr>
             </tbody>
           </table><br>
+          <p style="text-align: right;">Purwakarta, {{$date}}<br>Mengetahui,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br><br>Muhammad Nugraha, S.T., M.Eng.</p>
     </div>
 </body>
 </html>
