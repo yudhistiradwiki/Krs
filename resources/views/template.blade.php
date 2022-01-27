@@ -122,7 +122,6 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{Auth::guard('user')->user()->name}}</p>
                 <p class="fw-light text-muted mb-0">{{Auth::guard('user')->user()->email}}</p>
               </div>
-              <a class="dropdown-item" href="/profile/user/{{Auth::guard('user')->user()->id}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
               <a class="dropdown-item" href="/logout"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
             </div>
           </li>
@@ -136,7 +135,6 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{Auth::guard('mahasiswa')->user()->nama_lengkap}}</p>
                 <p class="fw-light text-muted mb-0">{{Auth::guard('mahasiswa')->user()->email}}</p>
               </div>
-              <a class="dropdown-item" href="/profile/mahasiswa/{{Auth::guard('mahasiswa')->user()->nim}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
               <a class="dropdown-item" href="/logout"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
             </div>
           </li>
@@ -150,7 +148,6 @@
                 <p class="mb-1 mt-3 font-weight-semibold">{{Auth::guard('dosen')->user()->nama_dosen}}</p>
                 <p class="fw-light text-muted mb-0">{{Auth::guard('dosen')->user()->email}}</p>
               </div>
-              <a class="dropdown-item" href="/profile/dosen/{{Auth::guard('dosen')->user()->nidn}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
               <a class="dropdown-item" href="/logout"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
             </div>
           </li>
@@ -200,6 +197,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+          @if(Str::length(Auth::guard('user')->user())>0)
           <li class="nav-item nav-category">Akademik</li>
           <li class="nav-item">
 
@@ -218,6 +216,8 @@
                 </ul>
             </div>
           </li>
+          @endif
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="menu-icon mdi mdi-table"></i>
@@ -227,23 +227,23 @@
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
                 @if(Str::length(Auth::guard('user')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/krs">KRS</a></li>
+                <li class="nav-item"><a class="nav-link" href="/krs/admin">KRS</a></li>
                 @elseif(Str::length(Auth::guard('mahasiswa')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/krs/{{Auth::guard('mahasiswa')->user()->nim}}/6">KRS</a></li>
             @elseif(Str::length(Auth::guard('dosen')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/krs/">KRS</a></li>
+                <li class="nav-item"><a class="nav-link" href="/krs/dosen">KRS</a></li>
             @endif
             @if(Str::length(Auth::guard('user')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/khs">KHS</a></li>
+                <li class="nav-item"><a class="nav-link" href="/khs/admin">KHS</a></li>
             @elseif(Str::length(Auth::guard('mahasiswa')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/khs/view/{{Auth::guard('mahasiswa')->user()->nim}}/6">KHS</a></li>
             @elseif(Str::length(Auth::guard('dosen')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/khs">KHS</a></li>
+                <li class="nav-item"><a class="nav-link" href="/khs/dosen">KHS</a></li>
             @endif
             @if(Str::length(Auth::guard('user')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/nilai">Nilai Mahasiswa</a></li>
+                <li class="nav-item"><a class="nav-link" href="/nilai/admin">Nilai Mahasiswa</a></li>
             @elseif(Str::length(Auth::guard('mahasiswa')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/nilai">Nilai Mahasiswa</a></li>
+                <li class="nav-item"><a class="nav-link" href="/nilai/mhs">Nilai Mahasiswa</a></li>
             @elseif(Str::length(Auth::guard('dosen')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/nilai/select/{{Auth::guard('dosen')->user()->nidn}}">Nilai Mahasiswa</a></li>
             @endif
