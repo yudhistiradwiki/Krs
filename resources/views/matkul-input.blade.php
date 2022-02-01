@@ -30,15 +30,15 @@ Yudhistira
             {{ csrf_field() }}
           <div class="form-group">
             <label for="kode_matakuliah">Kode Mata Kuliah</label>
-            <input type="text" class="form-control" id="kode_matakuliah" value="{{ old('kode_matakuliah') }}" name="kode_matakuliah" placeholder="Kode Mata Kuliah">
+            <input required type="text" class="form-control" id="kode_matakuliah" value="{{ old('kode_matakuliah') }}" name="kode_matakuliah" placeholder="Kode Mata Kuliah">
           </div>
           <div class="form-group">
             <label for="nama_matakuliah">Nama Mata Kuliah</label>
-            <input type="text" class="form-control" id="nama_matakuliah" value="{{ old('nama_matakuliah') }}" name="nama_matakuliah" placeholder="Nama Mata Kuliah">
+            <input required type="text" class="form-control" id="nama_matakuliah" value="{{ old('nama_matakuliah') }}" name="nama_matakuliah" placeholder="Nama Mata Kuliah">
           </div>
           <div class="form-group">
             <label for="sks">SKS</label>
-            <input type="text" class="form-control" id="sks" value="{{ old('sks') }}" name="sks" placeholder="SKS">
+            <input required type="text" class="form-control" id="sks" value="{{ old('sks') }}" name="sks" placeholder="SKS">
           </div>
           <div class="form-group">
             <label for="semester">Semester</label>

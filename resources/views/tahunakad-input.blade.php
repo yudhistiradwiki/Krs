@@ -30,11 +30,11 @@ Yudhistira
             {{ csrf_field() }}
           <div class="form-group">
             <label for="id_thn_akad">ID Tahun</label>
-            <input type="text" class="form-control" id="id_thn_akad" value="{{ old('id_thn_akad') }}" name="id_thn_akad" placeholder="ID">
+            <input required type="text" class="form-control" id="id_thn_akad" value="{{ old('id_thn_akad') }}" name="id_thn_akad" placeholder="ID">
           </div>
           <div class="form-group">
             <label for="tahun_akademik">Tahun</label>
-            <input type="text" class="form-control" id="tahun_akademik" value="{{ old('tahun_akademik') }}" name="tahun_akademik" placeholder="Tahun Akademik">
+            <input required type="text" class="form-control" id="tahun_akademik" value="{{ old('tahun_akademik') }}" name="tahun_akademik" placeholder="Tahun Akademik">
           </div>
           <div class="form-group">
             <label for="semester">Semester</label>

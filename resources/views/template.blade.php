@@ -218,6 +218,7 @@
           </li>
           @endif
 
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="menu-icon mdi mdi-table"></i>
@@ -226,24 +227,20 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                @if(Str::length(Auth::guard('user')->user())>0)
+            @if(Str::length(Auth::guard('user')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/krs/admin">KRS</a></li>
-                @elseif(Str::length(Auth::guard('mahasiswa')->user())>0)
+            @elseif(Str::length(Auth::guard('mahasiswa')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/krs/{{Auth::guard('mahasiswa')->user()->nim}}/6">KRS</a></li>
             @elseif(Str::length(Auth::guard('dosen')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/krs/dosen">KRS</a></li>
             @endif
             @if(Str::length(Auth::guard('user')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/khs/admin">KHS</a></li>
             @elseif(Str::length(Auth::guard('mahasiswa')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/khs/view/{{Auth::guard('mahasiswa')->user()->nim}}/6">KHS</a></li>
             @elseif(Str::length(Auth::guard('dosen')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/khs/dosen">KHS</a></li>
             @endif
             @if(Str::length(Auth::guard('user')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/nilai/admin">Nilai Mahasiswa</a></li>
             @elseif(Str::length(Auth::guard('mahasiswa')->user())>0)
-                <li class="nav-item"><a class="nav-link" href="/nilai/mhs">Nilai Mahasiswa</a></li>
             @elseif(Str::length(Auth::guard('dosen')->user())>0)
                 <li class="nav-item"><a class="nav-link" href="/nilai/select/{{Auth::guard('dosen')->user()->nidn}}">Nilai Mahasiswa</a></li>
             @endif

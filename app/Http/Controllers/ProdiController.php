@@ -26,6 +26,7 @@ class ProdiController extends Controller
             'nama_prodi' => $a -> nama_prodi,
         ]);
         return redirect('/prodi') -> with('berhasil', 'Data berhasil disimpan!');
+        toast('Data mahasiswa berhasil ditambahkan!','success');
     }
     public function edit($id){
         $dataMhs = DB::table('prodi') -> where('id_prodi', $id) -> get();

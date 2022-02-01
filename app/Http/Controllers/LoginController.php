@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class LoginController extends Controller
 {
@@ -30,7 +32,9 @@ class LoginController extends Controller
             $a -> session()->regenerate();
             return redirect()->intended('/lecture');
         }
+        alert()->error('Login gagal!','Silahkan masukkan email dan kata sandi dengan benar');
         return back() -> with('loginError', 'Maaf! Gagal Login');
+
     }
 
     public function logout(Request $a)

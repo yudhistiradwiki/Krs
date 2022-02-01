@@ -29,7 +29,6 @@ Yudhistira
             <thead>
               <tr>
                 <th>NO</th>
-                <th>id</th>
                 <th>Kode MK</th>
                 <th>Nama MK</th>
                 <th>NIM</th>
@@ -47,7 +46,6 @@ Yudhistira
                 @foreach ($join as $data)
             <tr>
               <td width="20px"><?= $no++; ?></td>
-              <td>{{$data->id_krs}}</td>
               <td>{{$data->kode_matakuliah}}</td>
               <td>{{$data->nama_matakuliah}}</td>
               <td>{{$data->nim}}</td>

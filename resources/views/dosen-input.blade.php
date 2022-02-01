@@ -30,19 +30,19 @@ Yudhistira
             {{ csrf_field() }}
           <div class="form-group">
             <label for="nidn">NIDN</label>
-            <input type="text" class="form-control" id="nidn" value="{{ old('nidn') }}" name="nidn" placeholder="Nomor Induk Mahasiswa">
+            <input required type="text" class="form-control" id="nidn" value="{{ old('nidn') }}" name="nidn" placeholder="Nomor Induk Mahasiswa">
           </div>
           <div class="form-group">
             <label for="nama_dosen">Nama</label>
-            <input type="text" class="form-control" id="nama_dosen" value="{{ old('nama_dosen') }}" name="nama_dosen" placeholder="Nama Lengkap">
+            <input required type="text" class="form-control" id="nama_dosen" value="{{ old('nama_dosen') }}" name="nama_dosen" placeholder="Nama Lengkap">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="text" class="form-control" id="password" value="{{old('password') }}" name="password" placeholder="Password">
+            <input required type="text" class="form-control" id="password" value="{{old('password') }}" name="password" placeholder="Password">
           </div>
           <div class="form-group">
             <label for="alamat">Alamat</label>
-            <input type="text" class="form-control" id="alamat" value="{{ old('alamat') }}" name="alamat" placeholder="Alamat">
+            <input required type="text" class="form-control" id="alamat" value="{{ old('alamat') }}" name="alamat" placeholder="Alamat">
           </div>
           <div class="form-group">
             <label for="jenis_kelamin">Jenis Kelamin</label>
@@ -54,7 +54,7 @@ Yudhistira
             </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" placeholder="Email">
+            <input required type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="telp">No. Telepon</label>

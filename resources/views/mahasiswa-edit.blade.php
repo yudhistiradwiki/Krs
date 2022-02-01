@@ -31,35 +31,35 @@ Yudhistira
             {{ csrf_field() }}
             <div class="form-group">
               <label for="nim">Nim</label>
-              <input type="text" class="form-control" id="nim" value="{{ $dataMhs -> nim }}" name="nim" placeholder="Nomor Induk Mahasiswa">
+              <input required type="text" class="form-control" id="nim" value="{{ $dataMhs -> nim }}" name="nim" placeholder="Nomor Induk Mahasiswa">
             </div>
             <div class="form-group">
               <label for="nama_lengkap">Nama</label>
-              <input type="text" class="form-control" id="nama_lengkap" value="{{ $dataMhs -> nama_lengkap }}" name="nama_lengkap" placeholder="Nama Lengkap">
+              <input required type="text" class="form-control" id="nama_lengkap" value="{{ $dataMhs -> nama_lengkap }}" name="nama_lengkap" placeholder="Nama Lengkap">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" class="form-control" id="password" value="{{ $dataMhs -> password }}" name="password" placeholder="Password">
+                <input required type="text" class="form-control" id="password" value="{{ $dataMhs -> password }}" name="password" placeholder="Password">
               </div>
             <div class="form-group">
               <label for="alamat">Alamat</label>
-              <input type="text" class="form-control" id="alamat" value="{{ $dataMhs -> alamat }}" name="alamat" placeholder="Alamat">
+              <input required type="text" class="form-control" id="alamat" value="{{ $dataMhs -> alamat }}" name="alamat" placeholder="Alamat">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" value="{{ $dataMhs -> email }}" placeholder="Email">
+              <input required type="email" class="form-control" id="email" name="email" value="{{ $dataMhs -> email }}" placeholder="Email">
             </div>
             <div class="form-group">
               <label for="telepon">No. Telepon</label>
-              <input type="text" class="form-control" id="telepon" name="telepon" value="{{ $dataMhs -> telepon }}" placeholder="Telepon">
+              <input required type="text" class="form-control" id="telepon" name="telepon" value="{{ $dataMhs -> telepon }}" placeholder="Telepon">
             </div>
             <div class="form-group">
               <label for="tempat_lahir">Tempat Lahir</label>
-              <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{ $dataMhs -> tempat_lahir }}" placeholder="Tempat Lahir">
+              <input required type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{ $dataMhs -> tempat_lahir }}" placeholder="Tempat Lahir">
             </div>
             <div class="form-group">
               <label for="tanggal_lahir">Tanggal Lahir</label>
-              <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="{{ $dataMhs -> tanggal_lahir }}" placeholder="Tempat Lahir">
+              <input required type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="{{ $dataMhs -> tanggal_lahir }}" placeholder="Tempat Lahir">
             </div>
             <div class="form-group">
               <label for="jenis_kelamin">Jenis Kelamin</label>

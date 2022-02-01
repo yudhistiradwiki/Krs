@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login SisfoPEI</title>
   <link rel="stylesheet" href="{{asset('theme/login/style.css')}}" />
+  <link rel="shortcut icon" href="{{asset('theme/images/favicon.png')}}" />
 </head>
 
 <body>
+    @include('sweetalert::alert')
   <main>
     <div class="box">
       <div class="inner-box">
@@ -29,12 +31,12 @@
             </div>
             <div class="actual-form">
                 <div class="input-wrap">
-                  <input name="email" type="email" class="input-field">
+                  <input name="email" type="email" required class="input-field">
                   <label>Alamat Email</label>
                 </div>
 
                 <div class="input-wrap">
-                  <input name="password" type="password" class="input-field">
+                  <input name="password" type="password" required class="input-field">
                   <label>Kata Sandi</label>
                 </div>
 
