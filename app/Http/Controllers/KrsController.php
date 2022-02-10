@@ -63,6 +63,13 @@ class KrsController extends Controller
         return redirect('/krs'.'/'.$nim.'/6') -> with('berhasil', 'Data berhasil disimpan!');
     }
 
+    public function hapus($nim,$krs)
+    {
+        DB::table('krs')->where('id_krs', $krs)->where('nim', $nim) -> delete();
+        toast('Data krs berhasil dihapus!','success');
+        return redirect('/krs'.'/'.$nim.'/6');
+    }
+
     public function cari(Request $x)
     {
         $cari = $x -> cari;

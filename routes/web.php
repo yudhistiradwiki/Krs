@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KrsController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\KhsController;
+use App\Models\KrsModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,6 +104,7 @@ Route::get('/krs/insert', [DosenController::class, 'tambah'])-> middleware('auth
 Route::post('/krs/save', [KrsController::class, 'simpan'])-> middleware('auth:mahasiswa');;
 Route::get('/krs/cari', [KrsController::class, 'cari'])-> middleware('auth:mahasiswa');;
 Route::get('/krs/print/{nim}/{id_thn_akad}', [KrsController::class, 'generatePDF']) -> middleware('auth:mahasiswa');
+Route::get('/krs/delete/{nim}/{krs}', [KrsController::class, 'hapus'])-> middleware('auth:user,mahasiswa');
 
 
 //nilai

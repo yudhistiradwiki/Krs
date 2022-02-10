@@ -58,6 +58,7 @@ Yudhistira
                   <th>Kode</th>
                   <th>Mata Kuliah</th>
                   <th>SKS</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,6 +76,13 @@ Yudhistira
                   <td>{{ $y -> kode_matakuliah }}</td>
                   <td>{{ $y -> nama_matakuliah }}</td>
                   <td>{{ $y -> sks}}</td>
+                  <td>
+                    </a> &nbsp;
+                    <a href="/krs/delete/{{Auth::guard('mahasiswa')->user()->nim}}/{{ $y -> id_krs }}">
+                        <button type="button" class="btn btn-inverse-danger btn-icon">
+                        <i class="ti-trash"></i></button>
+                    </a>
+                </td>
                 </tr>
                 @endforeach
                 <tr>
