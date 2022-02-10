@@ -42,11 +42,17 @@ class NilaiController extends Controller
     public function simpan(Request $a)
     {
         $kode_mks = $a->kode_mks;
-        if(!empty($a->input('isinilai'))){
+        if(!empty($a->input('teori'))){
             $will_nilai = [];
+            $will_teori = [];
+            $will_praktek = [];
             $will_id = [];
-            foreach ($a->input('isinilai') as $key => $value){
-                array_push($will_nilai, $value);
+
+            foreach ($a->input('teori') as $key => $value){
+                array_push($will_teori, $value);
+            }
+            foreach ($a->input('praktek') as $key => $value){
+                array_push($will_praktek, $value);
             }
             foreach ($a->input('id_krs') as $key => $value){
                 array_push($will_id, [$value]);
@@ -54,10 +60,14 @@ class NilaiController extends Controller
             $a = count($will_id);
             for ($x = 0; $x < $a; $x++){
                 DB::table('krs') -> where('id_krs', $will_id[$x]) -> update([
-                    'nilai' => $will_nilai[$x],
+                    'nilai_teori' => $will_teori[$x],
+                    'nilai_praktek' => $will_praktek[$x],
+                    'nilai' => ($will_teori[$x] + $will_praktek[$x])/2,
                 ]);
             }
         }
+        toast('Nilai berhasil ditambahkan!','success');
         return redirect('/nilai/input'.'/'.$kode_mks.'/6') -> with('berhasil', 'Data berhasil disimpan!');
+
     }
 }

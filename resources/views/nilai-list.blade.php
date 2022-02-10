@@ -29,11 +29,11 @@ Yudhistira
             <thead>
               <tr>
                 <th>NO</th>
-                <th>Kode MK</th>
                 <th>Nama MK</th>
-                <th>NIM</th>
                 <th>Nama Mahasiswa</th>
-                <th>Nilai</th>
+                <th>Nilai Teori</th>
+                <th>Nilai Praktek</th>
+                <th>Nilai Akhir</th>
                 </tr>
             </thead>
             <?php
@@ -46,13 +46,13 @@ Yudhistira
                 @foreach ($join as $data)
             <tr>
               <td width="20px"><?= $no++; ?></td>
-              <td>{{$data->kode_matakuliah}}</td>
               <td>{{$data->nama_matakuliah}}</td>
-              <td>{{$data->nim}}</td>
               <td>{{$data->nama_lengkap}}</td>
               <input type="hidden" name="id_krs[]" value="{{$data->id_krs}}">
               <input type="hidden" name="kode_mks" value="{{$data->kode_matakuliah}}">
-              <td><input type="text" class="form-control" name="isinilai[]" value="{{$data->nilai}}"></td>
+              <td><input type="text" class="form-control" name="teori[]" value="{{$data->nilai_teori}}"></td>
+              <td><input type="text" class="form-control" name="praktek[]" value="{{$data->nilai_praktek}}"></td>
+              <td><input type="text" disabled class="form-control" name="isinilai[]" value="{{$data->nilai}}"></td>
             </tr>
             @endforeach
             </tbody>

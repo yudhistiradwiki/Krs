@@ -108,7 +108,7 @@ Route::get('/krs/print/{nim}/{id_thn_akad}', [KrsController::class, 'generatePDF
 //nilai
 Route::get('/nilai/select/{nidn}', [NilaiController::class, 'selectmk'])-> middleware('auth:dosen');
 Route::get('/nilai/input/{kode_matakuliah}/{id_thn_akad}', [NilaiController::class, 'inputnilai'])-> middleware('auth:dosen');
-Route::post('/nilai/save', [NilaiController::class, 'simpan'])-> middleware('auth:ddosen');;
+Route::post('/nilai/save', [NilaiController::class, 'simpan'])-> middleware('auth:dosen');;
 
 
 //khs
