@@ -6,7 +6,13 @@ Sistem informasi KRS dan KHS online membantu dosen dalam memberikan nilai KHS se
 
 ## Screnshoot
 
-<img height="330em" src=""/>
+<img height="330em" src="https://github.com/yudhistiradwiki/Krs/blob/master/public/theme/images/1.png"/>
+<img height="330em" src="https://github.com/yudhistiradwiki/Krs/blob/master/public/theme/images/2.png"/>
+<img height="330em" src="https://github.com/yudhistiradwiki/Krs/blob/master/public/theme/images/3.png"/>
+<img height="330em" src="https://github.com/yudhistiradwiki/Krs/blob/master/public/theme/images/4.png"/>
+<img height="330em" src="https://github.com/yudhistiradwiki/Krs/blob/master/public/theme/images/5.png"/>
+<img height="330em" src="https://github.com/yudhistiradwiki/Krs/blob/master/public/theme/images/6.png"/>
+<img height="330em" src="https://github.com/yudhistiradwiki/Krs/blob/master/public/theme/images/7.png"/>
 
 ## About Laravel
 
