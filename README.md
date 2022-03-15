@@ -4,7 +4,9 @@ Teknologi informasi merupakan salah satu sarana untuk membantu kegiatan akademik
 
 Sistem informasi KRS dan KHS online membantu dosen dalam memberikan nilai KHS secara online karena sistem ini dilengkapi login untuk user dosen, mahasiswa, dan administrator. Dikarenakan sistem KRS dan KHS ini sudah ada di Politeknik Enjinering Indorama jadi saya sebagai mahasiswa ingin mencoba membuat sistem yang sama. Pada sistem informasi berikut saya sebagai developer membuatnya dengan menggunakan Framework Laravel.
 
+## Screnshoot
 
+<img height="330em" src=""/>
 
 ## About Laravel
 
