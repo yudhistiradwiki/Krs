@@ -6,7 +6,6 @@ Sistem informasi KRS dan KHS online membantu dosen dalam memberikan nilai KHS se
 
 
 
-
 ## About Laravel
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
@@ -73,3 +72,62 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Instalasi
+#### Via Git
+```bash
+git clone https://github.com/yudhistiradwiki/Krs.git
+```
+
+### Download ZIP
+[Link Download Zip](https://github.com/yudhistiradwiki/Krs/archive/refs/heads/master.zip)
+
+### Setup Aplikasi
+Jalankan perintah 
+```bash
+composer update
+```
+atau:
+```bash
+composer install
+```
+Copy file .env dari .env.example
+```bash
+cp .env.example .env
+```
+Konfigurasi file .env
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sisfopei
+DB_USERNAME=root
+DB_PASSWORD=
+```
+Opsional
+```bash
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:VrU4MAnOVXV150T+TxpH2sn6M2uwHiOls2oxBEomlXA=
+APP_DEBUG=true
+APP_URL=http://localhost
+```
+Generate key
+```bash
+php artisan key:generate
+```
+Menjalankan aplikasi
+```bash
+php artisan serve
+```
+
+<!--
+Migrate database
+```bash
+php artisan migrate
+```
+Seeder table User, Pengaturan
+```bash
+php artisan db:seed
+```
+-->
