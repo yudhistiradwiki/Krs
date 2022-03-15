@@ -1,3 +1,14 @@
+## Sistem Informasi KRS dan KHS
+
+Teknologi informasi merupakan salah satu sarana untuk membantu kegiatan akademik di perguruan tinggi misalnya mengolah data kartu rencana studi dan kartu hasil studi. Teknologi informasi adalah alat bantu untuk memudahkan aliran data dan informasi dari setiap bagian dalam suatu instansi akademik. salah satunya adalah sistem KRS dan KHS.
+
+Sistem informasi KRS dan KHS online membantu dosen dalam memberikan nilai KHS secara online karena sistem ini dilengkapi login untuk user dosen, mahasiswa, dan administrator. Dikarenakan sistem KRS dan KHS ini sudah ada di Politeknik Enjinering Indorama jadi saya sebagai mahasiswa ingin mencoba membuat sistem yang sama. Pada sistem informasi berikut saya sebagai developer membuatnya dengan menggunakan Framework Laravel.
+
+
+
+
+## About Laravel
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -6,8 +17,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
-
-## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
