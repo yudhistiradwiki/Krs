@@ -106,3 +106,5 @@ Seeder table User, Pengaturan
 php artisan db:seed
 ```
 -->
+
+Thank you.
